@@ -57,6 +57,6 @@ tasks:
     args: ['run', 'ruff', 'format', '--check', '.']
     toolchains: ['system']
     inputs:
-      - 'app/**/*.py'
+      - 'fueliq/**/*.py'
       - 'tests/**/*.py'
       - 'pyproject.toml'
