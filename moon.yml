@@ -1,0 +1,62 @@
+
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+tasks:
+  install:
+    command: 'uv'
+    args: ['sync']
+    toolchains: ['system']
+    inputs:
+      - 'pyproject.toml'
+      - 'uv.lock'
+
+  dev:
+    command: 'uv'
+    args:
+      - 'run'
+      - 'uvicorn'
+      - 'app.main:app'
+      - '--reload'
+      - '--host'
+      - '0.0.0.0'
+    toolchains: ['system']
+    options:
+      cache: false
+
+  test:
+    command: 'uv'
+    args: ['run', 'pytest']
+    toolchains: ['system']
+    inputs:
+      - 'app/**/*.py'
+      - 'tests/**/*.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+
+  lint:
+    command: 'uv'
+    args: ['run', 'ruff', 'check', '.']
+    toolchains: ['system']
+    inputs:
+      - 'app/**/*.py'
+      - 'tests/**/*.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+
+  format:
+    command: 'uv'
+    args: ['run', 'ruff', 'format', '.']
+    toolchains: ['system']
+    inputs:
+      - 'app/**/*.py'
+      - 'tests/**/*.py'
+      - 'pyproject.toml'
+
+  format-check:
+    command: 'uv'
+    args: ['run', 'ruff', 'format', '--check', '.']
+    toolchains: ['system']
+    inputs:
+      - 'app/**/*.py'
+      - 'tests/**/*.py'
+      - 'pyproject.toml'

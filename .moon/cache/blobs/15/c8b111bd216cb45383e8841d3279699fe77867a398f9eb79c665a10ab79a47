@@ -1,0 +1,1 @@
+[{"projects":{"root":"."},"asyncGraphBuilding":true,"env":{"MOON_OUTPUT_STYLE":"","MOON_RETRY_COUNT":""},"extensions":{},"inDocker":true,"inputs":{"./moon.yml":"a1ecde2ad6119d648bf59e8a3cc63b9ad7d1fbfbaaa64d52d6f2362f0f36c32e",".moon/workspace.yml":"cceb629e52af5d6abe457e26b8f68e896e763bbfcc549aba15a459b61ec033fe"},"toolchains":{},"version":"2.6.5"}]
